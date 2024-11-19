@@ -8,7 +8,7 @@
 
 ```
 (async function createPhoto() {
-    let photo = { "filename": "hello.jpg"};
+    let photo = { "filename": "post.jpg"};
     await fetch('http://localhost:8080/photos', {
     	method: "POST",
     	headers: {

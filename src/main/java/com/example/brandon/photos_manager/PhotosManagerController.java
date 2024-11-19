@@ -1,5 +1,6 @@
 package com.example.brandon.photos_manager;
 
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
@@ -40,7 +41,7 @@ public class PhotosManagerController {
     }
 
     @PostMapping("/photos")
-    public PhotoModel create(@RequestBody PhotoModel photo) {
+    public PhotoModel create(@RequestBody @Valid PhotoModel photo) {
         photo.setId(UUID.randomUUID().toString());
         db.put(photo.getId(), photo);
         return photo;
