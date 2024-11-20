@@ -1,6 +1,7 @@
 package com.example.brandon.photos_manager.service;
 
 import com.example.brandon.photos_manager.model.PhotoModel;
+import com.example.brandon.photos_manager.repository.PhotosManagerRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
@@ -11,21 +12,22 @@ import java.util.UUID;
 @Service
 public class PhotosManagerService {
 
-    private Map<String, PhotoModel> db = new HashMap<>() {{
-        put("1", new PhotoModel("1", "hello.jpg"));
-    }};
+    private final PhotosManagerRepository photosManagerRepository;
 
-
-    public Collection<PhotoModel> findAll() {
-        return db.values();
+    public PhotosManagerService(PhotosManagerRepository photosManagerRepository) {
+        this.photosManagerRepository = photosManagerRepository;
     }
 
-    public PhotoModel get(String id) {
-        return db.get(id);
+    public Iterable<PhotoModel> get() {
+        return photosManagerRepository.findAll();
     }
 
-    public PhotoModel remove(String id) {
-        return db.remove(id);
+    public PhotoModel get(Integer id) {
+        return photosManagerRepository.findById(id).orElse(null);
+    }
+
+    public void remove(Integer id) {
+        photosManagerRepository.deleteById(id);
     }
 
     public PhotoModel save(String filename, String contentType, byte[] data) {
@@ -33,11 +35,10 @@ public class PhotosManagerService {
         PhotoModel photo = new PhotoModel();
 
         photo.setContentType(contentType);
-        photo.setId(UUID.randomUUID().toString());
         photo.setFilename(filename);
         photo.setData(data);
 
-        db.put(photo.getId(), photo);
+        photosManagerRepository.save(photo);
 
         return photo;
 

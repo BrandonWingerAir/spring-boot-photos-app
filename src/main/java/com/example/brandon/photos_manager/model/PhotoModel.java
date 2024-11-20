@@ -2,13 +2,17 @@ package com.example.brandon.photos_manager.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.validation.constraints.NotEmpty;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
 
+@Table("PHOTOS")
 public class PhotoModel {
 
-    private String id;
+    @Id
+    private Integer id;
 
     @NotEmpty
-    private String filename;
+    private String fileName;
 
     private String contentType;
 
@@ -19,28 +23,20 @@ public class PhotoModel {
 
     }
 
-    public PhotoModel(String id, String filename) {
-        this.id = id;
-        this.filename = filename;
-    }
-
-    // TODO:
-    // Raw Data
-
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
     public String getFilename() {
-        return filename;
+        return fileName;
     }
 
     public void setFilename(String filename) {
-        this.filename = filename;
+        this.fileName = filename;
     }
 
     public byte[] getData() {

@@ -10,6 +10,9 @@
 ### Download Path:
 <!-- --> http://localhost:8080/photos/download/IMAGE_ID
 
+### H2 Database Console:
+<!-- --> http://localhost:8080/h2-console
+
 ### POST call (browser console):
 
 ```

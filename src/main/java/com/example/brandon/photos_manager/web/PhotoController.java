@@ -20,7 +20,7 @@ public class PhotoController {
     }
 
     @GetMapping("/photos/download/{id}")
-    public ResponseEntity<byte[]> download(@PathVariable String id) {
+    public ResponseEntity<byte[]> download(@PathVariable Integer id) {
 
         PhotoModel photo = photosManagerService.get(id);
         if (photo == null) throw new ResponseStatusException(HttpStatus.NOT_FOUND);
