@@ -22,7 +22,7 @@ public class PhotosManagerController {
 
     @GetMapping("/")
     public String hello() {
-        return "Hello World";
+        return "Photo Manager";
     }
 
     @GetMapping("/photos")
