@@ -1,10 +1,15 @@
 package com.example.brandon.photos_manager;
 
+import jakarta.validation.constraints.NotEmpty;
+
 public class PhotoModel {
 
     private String id;
 
+    @NotEmpty
     private String filename;
+
+    private byte[] data;
 
     public PhotoModel() {
 
@@ -32,5 +37,13 @@ public class PhotoModel {
 
     public void setFilename(String filename) {
         this.filename = filename;
+    }
+
+    public byte[] getData() {
+        return data;
+    }
+
+    public void setData(byte[] data) {
+        this.data = data;
     }
 }
