@@ -43,6 +43,7 @@ public class PhotosManagerController {
     public void delete(@PathVariable String id) {
 
         PhotoModel photo = photosManagerService.remove(id);
+
         if (photo == null) throw new ResponseStatusException(HttpStatus.NOT_FOUND);
 
     }
@@ -50,7 +51,7 @@ public class PhotosManagerController {
     @PostMapping("/photos")
     public PhotoModel create(@RequestPart("data") MultipartFile file) throws IOException {
 
-        return photosManagerService.save(file.getOriginalFilename(), file.getBytes());
+        return photosManagerService.save(file.getOriginalFilename(), file.getContentType(), file.getBytes());
 
     }
 

@@ -27,10 +27,11 @@ public class PhotosManagerService {
         return db.remove(id);
     }
 
-    public PhotoModel save(String filename, byte[] data) {
+    public PhotoModel save(String filename, String contentType, byte[] data) {
 
         PhotoModel photo = new PhotoModel();
 
+        photo.setContentType(contentType);
         photo.setId(UUID.randomUUID().toString());
         photo.setFilename(filename);
         photo.setData(data);

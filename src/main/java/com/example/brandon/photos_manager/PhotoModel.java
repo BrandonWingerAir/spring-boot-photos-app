@@ -10,6 +10,8 @@ public class PhotoModel {
     @NotEmpty
     private String filename;
 
+    private String contentType;
+
     @JsonIgnore
     private byte[] data;
 
@@ -43,6 +45,14 @@ public class PhotoModel {
 
     public byte[] getData() {
         return data;
+    }
+
+    public String getContentType() {
+        return contentType;
+    }
+
+    public void setContentType(String contentType) {
+        this.contentType = contentType;
     }
 
     public void setData(byte[] data) {

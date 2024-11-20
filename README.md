@@ -7,6 +7,9 @@
 ### Upload Path:
 <!-- --> http://localhost:8080/upload.html
 
+### Download Path:
+<!-- --> http://localhost:8080/photos/download/IMAGE_ID
+
 ### POST call (browser console):
 
 ```
