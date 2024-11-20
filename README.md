@@ -4,6 +4,9 @@
 ### Photo Path:
 <!-- --> http://localhost:8080/photos/1
 
+### Upload Path:
+<!-- --> http://localhost:8080/upload.html
+
 ### POST call (browser console):
 
 ```

@@ -1,5 +1,6 @@
 package com.example.brandon.photos_manager;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.validation.constraints.NotEmpty;
 
 public class PhotoModel {
@@ -9,6 +10,7 @@ public class PhotoModel {
     @NotEmpty
     private String filename;
 
+    @JsonIgnore
     private byte[] data;
 
     public PhotoModel() {
