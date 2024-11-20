@@ -1,5 +1,6 @@
-package com.example.brandon.photos_manager;
+package com.example.brandon.photos_manager.service;
 
+import com.example.brandon.photos_manager.model.PhotoModel;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;

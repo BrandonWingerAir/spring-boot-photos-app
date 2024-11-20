@@ -1,5 +1,7 @@
-package com.example.brandon.photos_manager;
+package com.example.brandon.photos_manager.web;
 
+import com.example.brandon.photos_manager.model.PhotoModel;
+import com.example.brandon.photos_manager.service.PhotosManagerService;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

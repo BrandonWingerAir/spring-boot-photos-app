@@ -1,4 +1,4 @@
-package com.example.brandon.photos_manager;
+package com.example.brandon.photos_manager.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.validation.constraints.NotEmpty;
